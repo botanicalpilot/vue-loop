@@ -131,9 +131,6 @@ export default {
 				var itemSize = container.childNodes[0].clientHeight
 			}
 			var division = containerSize / itemSize;
-			for(var i = 0; i < division + 1; i++) {
-				container.appendChild(container.childNodes[i].cloneNode(true));
-			}
 			return division;
 		}
 	}
