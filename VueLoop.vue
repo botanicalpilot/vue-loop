@@ -163,6 +163,7 @@ export default {
 .loop-container.full > .item {
 	min-width: 100%;
 	min-height: 50%;
+	max-height: 50%;
 	flex: 1;
 	backface-visibility: hidden;
     transform: translate3d(0,0,0);
