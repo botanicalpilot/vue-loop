@@ -181,4 +181,10 @@ export default {
 	min-width: 100%;
 	flex: 1;
 }
+@media only screen and (max-width: 599px) {
+	.loop-container.full > .item {
+		min-height: 60%;
+		max-height: 60%;
+	}
+}
 </style>
