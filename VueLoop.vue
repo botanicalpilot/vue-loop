@@ -56,11 +56,20 @@ export default {
 		window.addEventListener('resize', () => {
 			vm.getDimensions()
 		}, true);
-
+		
+		// Setup isScrolling variable
+		var isScrolling;
 		//When the element is scrolled
-		vm.$el.addEventListener('scroll', (event) => {
+		vm.$el.addEventListener('scroll', function ( event ) {
+			// Clear our timeout throughout the scroll
+			window.clearTimeout( isScrolling );
 			vm.scrollHandler();
-		}, true);
+			// Set a timeout to run after scrolling ends
+			isScrolling = setTimeout(function() {
+				// Run the callback
+				vm.$el.scrollBy(0,1);
+			}, 66);
+		}, false);
 	},
 
 	methods: {
