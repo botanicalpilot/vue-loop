@@ -16,8 +16,11 @@ export default {
 			type: Boolean,
 			default: true
 		},
-
 		horizontal: {
+			type: Boolean,
+			default: false
+		},
+		stopLoop: {
 			type: Boolean,
 			default: false
 		}
@@ -60,20 +63,22 @@ export default {
 		// Setup isScrolling variable
 		var isScrolling;
 		
-		//initiate scroll on load
-		vm.$el.scrollBy(0,1);
-		
 		//When the element is scrolled
-		vm.$el.addEventListener('scroll', function ( event ) {
-			// Clear our timeout throughout the scroll
-			window.clearTimeout( isScrolling );
-			vm.scrollHandler();
-			// Set a timeout to run after scrolling ends
-			isScrolling = setTimeout(function() {
-				// Run the callback
-				vm.$el.scrollBy(0,1);
-			}, 66);
-		}, false);
+		if(!vm.stopLoop){
+			//initiate scroll on load
+			vm.$el.scrollBy(0,1);
+			
+			vm.$el.addEventListener('scroll', function ( event ) {
+				// Clear our timeout throughout the scroll
+				window.clearTimeout( isScrolling );
+				vm.scrollHandler();					
+				// Set a timeout to run after scrolling ends
+				isScrolling = setTimeout(function() {
+					// Run the callback
+					vm.$el.scrollBy(0,1);
+				}, 66);
+			}, false);
+		}
 	},
 
 	methods: {
