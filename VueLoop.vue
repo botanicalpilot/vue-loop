@@ -59,6 +59,10 @@ export default {
 		
 		// Setup isScrolling variable
 		var isScrolling;
+		
+		//initiate scroll on load
+		vm.$el.scrollBy(0,1);
+		
 		//When the element is scrolled
 		vm.$el.addEventListener('scroll', function ( event ) {
 			// Clear our timeout throughout the scroll
