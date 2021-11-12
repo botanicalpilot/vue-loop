@@ -66,7 +66,10 @@ export default {
 		//When the element is scrolled
 		if(!vm.stopLoop){
 			//initiate scroll on load
-			vm.$el.scrollBy(0,1);
+			vm.$el.scrollBy({
+				top: 5,
+				behavior: "smooth"
+			});
 			
 			vm.$el.addEventListener('scroll', function ( event ) {
 				// Clear our timeout throughout the scroll
@@ -75,8 +78,11 @@ export default {
 				// Set a timeout to run after scrolling ends
 				isScrolling = setTimeout(function() {
 					// Run the callback
-					vm.$el.scrollBy(0,1);
-				}, 66);
+					vm.$el.scrollBy({
+						top: 5,
+						behavior: "smooth"
+					});
+				}, 8);
 			}, false);
 		}
 	},
