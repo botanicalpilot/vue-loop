@@ -67,7 +67,7 @@ export default {
 		if(!vm.stopLoop){
 			//initiate scroll on load
 			vm.$el.scrollBy({
-				top: 5,
+				top: 1,
 				behavior: "smooth"
 			});
 			
@@ -82,7 +82,7 @@ export default {
 						top: 5,
 						behavior: "smooth"
 					});
-				}, 8);
+				}, 1);
 			}, false);
 		}
 	},
