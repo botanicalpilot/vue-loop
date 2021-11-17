@@ -1,5 +1,8 @@
 {
 	"name": "vue-loop",
 	"version": "0.2.6",
-	"main": "VueLoop.vue"
+	"main": "VueLoop.vue",
+	"dependencies": {
+		"zenscroll": "^4.0.2"
+	}
 }
